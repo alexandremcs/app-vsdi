@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    App VSDI
+                    {{ $value }}
                 </div>
 
                 <div class="links">
