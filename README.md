@@ -19,6 +19,11 @@ composer require "twig/twig:^3.0"
 # Instalando o TwigBridge para integração da engine com o Laravel
 composer require rcrowe/twigbridge
 
+#Configurando o TwigBridge no Laravel
+Adicionar o ServiceProvider do TwigBridge ao 'providers' do app.php do Laravel: TwigBridge\ServiceProvider::class, .
+
+Adicionar o facade do TwigBridge ao 'aliases' do app.php do Laravel: 'Twig' => TwigBridge\Facade\Twig::class, .
+
 # Rodando o servidor de testes
 php artisan server
 
