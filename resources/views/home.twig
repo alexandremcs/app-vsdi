@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>App VSDI</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+
+        <!-- Styles -->
+        <style>
+            html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 84px;
+            }
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+
+            .user {
+                position: relative;
+                top: 40px;
+                left: 40px;
+                font-size: 42px;
+                margin-bottom: 60px;
+                margin-left: 40px
+            }
+
+            section {
+                position: relative;
+                width: 400px;
+                height: 120px;
+                left: 40px;
+                background-color: #EEE;
+                padding: 20px;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-bottom: 10px;
+                margin-left: 40px;
+            }
+
+            section:hover {
+                background-color: #ddd;
+            }
+
+            section h2 {
+                padding: 0;
+                margin: 0;
+                color: #48d;
+            }
+
+            section small {
+                color: #000;
+                font-weight: 600; 
+            }
+
+            a {
+                text-decoration: none;
+                color: #636b6f;
+            }
+
+            input {
+                position: relative;
+                font-size: 20px;
+                margin: 30px;
+                left: 50px;
+                padding: 10px 20px;
+                outline: none;
+                border: 1px solid #999;
+                border-radius: 4px;
+                color: #636b6f;
+                top: 20px;
+            }
+
+            h1 {
+                position: relative;
+                top: 60px;
+                left: 40px;
+                font-size: 42px;
+                margin-bottom: 60px;
+                margin-left: 40px;
+            }
+
+            button {
+                position: relative;
+                font-size: 20px;
+                padding: 9px 20px;
+                margin-left: 30px;
+                border: none;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 600;
+                cursor: pointer;
+                background-color: #48d;
+                color: #fff;
+                border-radius: 4px;
+                top: 20px;
+            }
+
+            button:hover {
+                background-color: rgb(113, 176, 252);
+            }
+
+            button:active {
+                background-color: #444;
+            }
+
+            button:focus {
+                outline-style: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        
+        <h1>Olá, insira o seu login do GitHub</h1>
+        <input type="text" name="" id="field_repos">
+        <button>Pesquisar</button>
+
+    </body>
+
+    <script>
+        let b = document.querySelector('button')
+        let i = document.querySelector('#field_repos')
+        
+        b.addEventListener('click', function(event){
+            window.location.href=`/${i.value}`
+        })
+
+    </script>
+</html>

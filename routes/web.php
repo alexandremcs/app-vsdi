@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use GuzzleHttp\Client;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,33 +15,43 @@ use GuzzleHttp\Client;
 |
 */
 
+
 Route::get('/', function () {
 
-	$client = new Client();
+    $dataehora = date("l jS \of F Y h:i:s A");
 
-	$response = $client->request('GET', 'https://api.github.com/zen');
-	$statusCode = $response->getStatusCode();
-	$body = $response->getBody()->getContents();
+    $myfile = fopen("log.txt", "a");
+    fwrite($myfile, 'Data: '.$dataehora.", URL: / \n");
+    fclose($myfile);
 
-    return view('welcome', ['value' => $body]);
+	return view('home');
 });
 
-Route::get('/repos', function () {
+Route::get('/{login}', function ($login) {    
+    
+    $client = new Client();
 
-	$client = new Client();
+    try {
+        $response = $client->request('GET', 'https://api.github.com/users/'.$login.'/repos');
+    } catch (Exception $e) {
+        $dataehora = date("l jS \of F Y h:i:s A");
 
-	$response = $client->request('GET', 'https://api.github.com/users/alexandremcs/repos');
-	$statusCode = $response->getStatusCode();
+        $myfile = fopen("log.txt", "a");
+        fwrite($myfile, 'Data: '.$dataehora.", URL: /".$login." \n");
+        fclose($myfile);
+        return view('404');
+    }   
+
+    $statusCode = $response->getStatusCode();
 	$body = $response->getBody()->getContents();
-
-    //return view('welcome', ['value' => $body]);
 
     $objs = json_decode($body);
 
-    foreach ($objs as $obj) {
-        echo $obj->id . ' - ' . $obj->name;
-        echo '<br>';
-    }
+    $dataehora = date("l jS \of F Y h:i:s A");
 
-    return null;
+    $myfile = fopen("log.txt", "a");
+    fwrite($myfile, 'Data: '.$dataehora.", URL: /".$login." \n");
+    fclose($myfile);
+
+    return view('repos', ['objarray' => $objs]);
 });

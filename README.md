@@ -16,6 +16,9 @@ cd app-vsdi
 # Instalando o template engine Twig	
 composer require "twig/twig:^3.0"
 
+# Instalando o TwigBridge para integração da engine com o Laravel
+composer require rcrowe/twigbridge
+
 # Rodando o servidor de testes
 php artisan server
 
