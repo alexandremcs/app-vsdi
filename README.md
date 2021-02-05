@@ -34,15 +34,15 @@ php artisan server
 2.	Executar o comando ‘php artisan serve’ 
 3.	Acessar a raiz da aplicação pelo navegador: localhost:8000/ 
 4.	A aplicação retorna a view home.twig
-![](/img/home.twig.png)
+![](img/home.twig.png)
 5.	Entrar com o login desejado 
-![](/img/home.twig(login).png)
+![](img/home.twig(login).png)
 6.	Caso seja um login existente:
 a.	A aplicação acessa a rota /{login}
 b.	Consome a API rest do GitHub
 c.	Grava o endpoint no arquivo /public/log.txt
 d.	E exibe as informações do usuário e seus respectivos repositórios públicos na view repos.twig
-![](/img/repos.twig.png)
+![](img/repos.twig.png)
 7.	Caso seja um login inexistente:
 a.	A aplicação faz o mesmo processo nº 6, porém exibe a view 404.twig, informando que o usuário não existe e solicitando um login existente.
-![](/img/404.twig.png)
+![](img/404.twig.png)
